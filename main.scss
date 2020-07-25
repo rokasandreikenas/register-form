@@ -1,0 +1,80 @@
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+@import "./src/css/colors";
+
+// Navbar
+
+.navbar {
+    padding: 0rem 1rem;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: $font-color3;
+    border-bottom: 3px solid $background-color1;
+
+    &.current,
+    &:active {
+        color: $button-color-hover;
+        border-bottom: 3px solid $button-color;
+    }
+
+    &:hover {
+        color: $button-color-hover;
+        border-bottom: 3px solid $button-color;
+    }
+}
+
+// Carousel
+
+.carousel-inner {
+    width: 100%;
+    max-height: 500px;
+}
+
+.carousel-text {
+    position: absolute;
+    top: 140px;
+    left: 160px;
+    color: white;
+    max-width: 40%;
+
+    p {
+        padding-top: 20px;
+    }
+}
+
+@media (min-width: 486px) and (max-width: 768px) {
+    .carousel-text {
+        position: absolute;
+        top: 40px;
+        left: 60px;
+        color: white;
+        max-width: 40%;
+
+        h1 {
+            font-size: 24px;
+        }
+
+        p {
+            padding-top: 10px;
+            font-size: 10px;
+        }
+    }
+
+    .carousel-inner {
+        width: 100%;
+        max-height: 250px;
+    }
+}
+
+// Register
+
+.text-center {
+    padding: 14px;
+    text-align: center;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
