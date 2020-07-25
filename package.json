@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/rokasandreikenas/register-form#readme",
   "dependencies": {
-    "bootstrap": "^4.0.0"
+    "bootstrap": "^4.3.1"
   }
 }
