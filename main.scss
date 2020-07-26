@@ -12,13 +12,9 @@
     border-bottom: 3px solid $background-color1;
 
     &.current,
-    &:active {
-        color: $button-color-hover;
-        border-bottom: 3px solid $button-color;
-    }
-
+    &:active,
     &:hover {
-        color: $button-color-hover;
+        color: $button-color;
         border-bottom: 3px solid $button-color;
     }
 }
@@ -68,9 +64,14 @@
 
 // Register
 
+.register-section {
+    background-color: $background-color2;
+}
+
 .form-header {
     padding: 14px;
     text-align: center;
+    color: $font-color3;
 }
 
 #registration-form {
@@ -100,5 +101,38 @@
     svg {
         height: 18px;
         width: 18px;
+    }
+}
+
+// Registration tab
+
+#registrationTab {
+    padding-top: 20px;
+
+    .nav-item {
+        &.current,
+        &:active,
+        &:hover {
+            color: $button-color;
+            border-bottom: 3px solid $button-color;
+        }
+        .nav-link {
+            color: $button-color;
+            background-color: $background-color2;
+            border: none;
+
+            &.active {
+                border-bottom: 3px solid $button-color;
+            }
+        }
+    }
+}
+
+.nav .nav-tabs {
+    .nav-item {
+        background-color: red;
+        p {
+            background-color: red;
+        }
     }
 }
