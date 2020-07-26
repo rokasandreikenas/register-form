@@ -42,7 +42,7 @@
     }
 }
 
-@media (min-width: 486px) and (max-width: 768px) {
+@media (min-width: 320px) and (max-width: 768px) {
     .carousel-text {
         position: absolute;
         top: 40px;
@@ -68,13 +68,37 @@
 
 // Register
 
-.text-center {
+.form-header {
     padding: 14px;
     text-align: center;
 }
 
-.center {
-    display: flex;
-    justify-content: center;
+#registration-form {
+    margin: auto;
     width: 100%;
+
+    .col-12 {
+        margin: 10px 0px;
+    }
+}
+
+@media (min-width: 1024px) {
+    #registration-form {
+        margin: auto;
+        width: 50%;
+    }
+}
+
+.valid-feedback.feedback-icon,
+.invalid-feedback.feedback-icon {
+    position: absolute;
+    width: auto;
+    bottom: 6px;
+    right: 25px;
+    margin-top: 0;
+
+    svg {
+        height: 18px;
+        width: 18px;
+    }
 }
