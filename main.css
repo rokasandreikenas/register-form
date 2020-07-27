@@ -9055,6 +9055,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 .navbar {
   padding: 0rem 1rem;
+  font-weight: 500;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -9078,6 +9079,7 @@ a.text-dark:hover, a.text-dark:focus {
   left: 160px;
   color: white;
   max-width: 40%;
+  font-weight: 500;
 }
 
 .carousel-text p {
@@ -9091,6 +9093,7 @@ a.text-dark:hover, a.text-dark:focus {
     left: 60px;
     color: white;
     max-width: 40%;
+    font-weight: 500;
   }
   .carousel-text h1 {
     font-size: 24px;
@@ -9124,6 +9127,37 @@ a.text-dark:hover, a.text-dark:focus {
   margin: 10px 0px;
 }
 
+#registration-form .custom-control-label {
+  padding-left: 10px;
+  font-size: 14px;
+}
+
+#registration-form .custom-control-label::after {
+  background-color: #ffffff;
+  border: 0.5px solid #b2b2b2;
+  border-radius: 3px;
+  margin-top: 12px;
+}
+
+#registration-form .custom-checkbox .custom-control-label::before {
+  margin-top: 12px;
+}
+
+#registration-form .custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {
+  background-image: url("data:image/svg+xml,%3Csvg width='1em' height='1em' viewBox='0 0 16 16' class='bi bi-check' fill='%235335eb' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' d='M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z'/%3E%3C/svg%3E");
+  background-size: 16px 16px;
+}
+
+#registration-form .custom-checkbox .custom-control-input:checked:focus ~ .custom-control-label::before,
+#registration-form .custom-checkbox .custom-control-input:focus ~ .custom-control-label::before {
+  -webkit-box-shadow: 0 0 0 1px #f2f3f5, 0 0 0 0.2rem #f2f3f5;
+          box-shadow: 0 0 0 1px #f2f3f5, 0 0 0 0.2rem #f2f3f5;
+}
+
+#registration-form .custom-checkbox .custom-control-input:active ~ .custom-control-label::before {
+  background-color: #f2f3f5;
+}
+
 @media (min-width: 1024px) {
   #registration-form {
     margin: auto;
@@ -9148,28 +9182,58 @@ a.text-dark:hover, a.text-dark:focus {
 
 #registrationTab {
   padding-top: 20px;
-}
-
-#registrationTab .nav-item.current, #registrationTab .nav-item:active, #registrationTab .nav-item:hover {
-  color: #5335eb;
-  border-bottom: 3px solid #5335eb;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 #registrationTab .nav-item .nav-link {
   color: #5335eb;
   background-color: #f2f3f5;
   border: none;
+  font-weight: 500;
 }
 
-#registrationTab .nav-item .nav-link.active {
+#registrationTab .nav-item .nav-link:hover, #registrationTab .nav-item .nav-link.active {
+  color: #5335eb;
   border-bottom: 3px solid #5335eb;
 }
 
-.nav .nav-tabs .nav-item {
-  background-color: red;
+#registrationTabContent {
+  padding-top: 20px;
+  padding-bottom: 40px;
 }
 
-.nav .nav-tabs .nav-item p {
-  background-color: red;
+.terms-link {
+  color: #5335eb;
+  text-decoration: underline;
+}
+
+.terms-link:hover {
+  color: #5335eb;
+  text-decoration: none;
+}
+
+.register-button {
+  background-color: #5335eb;
+  border: none;
+  color: white;
+  padding: 10px 54px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 36px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+.register-button:hover {
+  background-color: #755def;
+}
+
+.register-button:focus {
+  outline: none;
 }
 /*# sourceMappingURL=main.css.map */

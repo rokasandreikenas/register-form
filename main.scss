@@ -4,135 +4,205 @@
 // Navbar
 
 .navbar {
-    padding: 0rem 1rem;
+  padding: 0rem 1rem;
+  font-weight: 500;
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color: $font-color3;
-    border-bottom: 3px solid $background-color1;
+  color: $font-color3;
+  border-bottom: 3px solid $background-color1;
 
-    &.current,
-    &:active,
-    &:hover {
-        color: $button-color;
-        border-bottom: 3px solid $button-color;
-    }
+  &.current,
+  &:active,
+  &:hover {
+    color: $button-color;
+    border-bottom: 3px solid $button-color;
+  }
 }
 
 // Carousel
 
 .carousel-inner {
-    width: 100%;
-    max-height: 500px;
+  width: 100%;
+  max-height: 500px;
 }
 
 .carousel-text {
-    position: absolute;
-    top: 140px;
-    left: 160px;
-    color: white;
-    max-width: 40%;
+  position: absolute;
+  top: 140px;
+  left: 160px;
+  color: white;
+  max-width: 40%;
+  font-weight: 500;
 
-    p {
-        padding-top: 20px;
-    }
+  p {
+    padding-top: 20px;
+  }
 }
 
 @media (min-width: 320px) and (max-width: 768px) {
-    .carousel-text {
-        position: absolute;
-        top: 40px;
-        left: 60px;
-        color: white;
-        max-width: 40%;
+  .carousel-text {
+    position: absolute;
+    top: 40px;
+    left: 60px;
+    color: white;
+    max-width: 40%;
+    font-weight: 500;
 
-        h1 {
-            font-size: 24px;
-        }
-
-        p {
-            padding-top: 10px;
-            font-size: 10px;
-        }
+    h1 {
+      font-size: 24px;
     }
 
-    .carousel-inner {
-        width: 100%;
-        max-height: 250px;
+    p {
+      padding-top: 10px;
+      font-size: 10px;
     }
+  }
+
+  .carousel-inner {
+    width: 100%;
+    max-height: 250px;
+  }
 }
 
 // Register
 
 .register-section {
-    background-color: $background-color2;
+  background-color: $background-color2;
 }
 
 .form-header {
-    padding: 14px;
-    text-align: center;
-    color: $font-color3;
+  padding: 14px;
+  text-align: center;
+  color: $font-color3;
 }
 
 #registration-form {
-    margin: auto;
-    width: 100%;
+  margin: auto;
+  width: 100%;
 
-    .col-12 {
-        margin: 10px 0px;
-    }
+  .col-12 {
+    margin: 10px 0px;
+  }
+
+  // Custom checkbox
+
+  .custom-control-label {
+    padding-left: 10px;
+    font-size: 14px;
+  }
+
+  .custom-control-label::after {
+    background-color: $background-color1;
+    border: 0.5px solid $font-color2;
+    border-radius: 3px;
+    margin-top: 12px;
+  }
+
+  .custom-checkbox .custom-control-label::before {
+    margin-top: 12px;
+  }
+
+  .custom-checkbox
+    .custom-control-input:checked
+    ~ .custom-control-label::after {
+    background-image: url("data:image/svg+xml,%3Csvg width='1em' height='1em' viewBox='0 0 16 16' class='bi bi-check' fill='%235335eb' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' d='M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z'/%3E%3C/svg%3E");
+    background-size: 16px 16px;
+  }
+
+  .custom-checkbox
+    .custom-control-input:checked:focus
+    ~ .custom-control-label::before,
+  .custom-checkbox .custom-control-input:focus ~ .custom-control-label::before {
+    box-shadow: 0 0 0 1px $background-color2, 0 0 0 0.2rem $background-color2;
+  }
+
+  .custom-checkbox
+    .custom-control-input:active
+    ~ .custom-control-label::before {
+    background-color: $background-color2;
+  }
 }
 
 @media (min-width: 1024px) {
-    #registration-form {
-        margin: auto;
-        width: 50%;
-    }
+  #registration-form {
+    margin: auto;
+    width: 50%;
+  }
 }
 
 .valid-feedback.feedback-icon,
 .invalid-feedback.feedback-icon {
-    position: absolute;
-    width: auto;
-    bottom: 6px;
-    right: 25px;
-    margin-top: 0;
+  position: absolute;
+  width: auto;
+  bottom: 6px;
+  right: 25px;
+  margin-top: 0;
 
-    svg {
-        height: 18px;
-        width: 18px;
-    }
+  svg {
+    height: 18px;
+    width: 18px;
+  }
 }
 
 // Registration tab
 
 #registrationTab {
-    padding-top: 20px;
+  padding-top: 20px;
+  justify-content: space-between;
 
-    .nav-item {
-        &.current,
-        &:active,
-        &:hover {
-            color: $button-color;
-            border-bottom: 3px solid $button-color;
-        }
-        .nav-link {
-            color: $button-color;
-            background-color: $background-color2;
-            border: none;
+  .nav-item {
+    .nav-link {
+      color: $button-color;
+      background-color: $background-color2;
+      border: none;
+      font-weight: 500;
 
-            &.active {
-                border-bottom: 3px solid $button-color;
-            }
-        }
+      &:hover,
+      &.active {
+        color: $button-color;
+        border-bottom: 3px solid $button-color;
+      }
     }
+  }
 }
 
-.nav .nav-tabs {
-    .nav-item {
-        background-color: red;
-        p {
-            background-color: red;
-        }
-    }
+#registrationTabContent {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+.terms-link {
+  color: $button-color;
+  text-decoration: underline;
+
+  &:hover {
+    color: $button-color;
+    text-decoration: none;
+  }
+}
+
+// Button
+
+.register-button {
+  background-color: $button-color;
+  border: none;
+  color: white;
+  padding: 10px 54px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 36px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 50px;
+
+  &:hover {
+    background-color: $button-color-hover;
+  }
+
+  &:focus {
+    outline: none;
+  }
 }
