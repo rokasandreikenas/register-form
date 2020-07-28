@@ -9053,6 +9053,29 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 
+.register-button {
+  background-color: #5335eb;
+  border: none;
+  color: white;
+  padding: 10px 54px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 36px 0px;
+  font-weight: 500;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.register-button:hover {
+  background-color: #755def;
+}
+
+.register-button:focus {
+  outline: none;
+}
+
 .navbar {
   padding: 0rem 1rem;
   font-weight: 500;
@@ -9108,47 +9131,6 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 
-.register-section {
-  background-color: #f2f3f5;
-}
-
-.form-header {
-  padding: 14px;
-  text-align: center;
-  color: #5b5a5a;
-}
-
-#registration-form {
-  margin: auto;
-  width: 100%;
-}
-
-#registration-form .col-12 {
-  margin: 10px 0px;
-}
-
-@media (min-width: 992px) {
-  #registration-form {
-    margin: auto;
-    width: 50%;
-  }
-}
-
-.valid-feedback.feedback-icon,
-.invalid-feedback.feedback-icon {
-  position: absolute;
-  width: auto;
-  bottom: 6px;
-  right: 25px;
-  margin-top: 0;
-}
-
-.valid-feedback.feedback-icon svg,
-.invalid-feedback.feedback-icon svg {
-  height: 18px;
-  width: 18px;
-}
-
 #registrationTab {
   padding-top: 20px;
   -webkit-box-pack: justify;
@@ -9182,8 +9164,30 @@ a.text-dark:hover, a.text-dark:focus {
   text-decoration: none;
 }
 
+.plus-minus {
+  margin-top: 5px;
+  width: 35px;
+  position: relative;
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+}
+
+.plus,
+.minus {
+  width: 30px;
+  height: 30px;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 32px;
+  text-align: center;
+  -webkit-transition: 0.5s all ease-out;
+  transition: 0.5s all ease-out;
+}
+
 .plus-minus-toggle {
-  cursor: pointer;
   position: relative;
   width: 30px;
   margin-top: 15px;
@@ -9219,6 +9223,18 @@ a.text-dark:hover, a.text-dark:focus {
 .accordion .card.active > .card-header .btn {
   color: #ffffff;
   text-decoration: none;
+}
+
+.accordion .card.active > .card-header .plus-minus .plus {
+  opacity: 0;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.accordion .card.active > .card-header .plus-minus .minus {
+  opacity: 1;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
 }
 
 .accordion .card {
@@ -9299,32 +9315,153 @@ a.text-dark:hover, a.text-dark:focus {
   background-color: #f2f3f5;
 }
 
-.register-button {
-  background-color: #5335eb;
-  border: none;
-  color: white;
-  padding: 10px 54px;
+.register-section {
+  background-color: #f2f3f5;
+}
+
+.form-header {
+  padding: 14px;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 36px 0px;
-  font-weight: 500;
-  border-radius: 50px;
-  cursor: pointer;
+  color: #5b5a5a;
 }
 
-.register-button:hover {
-  background-color: #755def;
+#registration-form {
+  margin: auto;
+  width: 100%;
 }
 
-.register-button:focus {
-  outline: none;
+#registration-form .col-12 {
+  margin: 10px 0px;
+}
+
+@media (min-width: 992px) {
+  #registration-form {
+    margin: auto;
+    width: 50%;
+  }
+}
+
+.valid-feedback.feedback-icon,
+.invalid-feedback.feedback-icon {
+  position: absolute;
+  width: auto;
+  bottom: 6px;
+  right: 25px;
+  margin-top: 0;
+}
+
+.valid-feedback.feedback-icon svg,
+.invalid-feedback.feedback-icon svg {
+  height: 18px;
+  width: 18px;
 }
 
 #map {
   width: 100%;
   height: 400px;
   background-color: grey;
+}
+
+#intro {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+#intro::after {
+  content: "";
+  background: url("./src/img/1.jpg") no-repeat;
+  opacity: 0.75;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+#intro .intro-content {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: center;
+}
+
+#intro .intro-content h2 {
+  color: #5335eb;
+  margin-bottom: 30px;
+  font-size: 64px;
+  font-weight: 700;
+}
+
+#intro .intro-content h2 span {
+  color: #ff6f61ff;
+  text-decoration: underline;
+}
+
+#intro .intro-content .btn-register,
+#intro .intro-content .btn-contact-us {
+  font-family: "Raleway", sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 32px;
+  border-radius: 2px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  margin: 10px;
+  color: #fff;
+}
+
+#intro .intro-content .btn-register,
+#intro .intro-content .btn-contact-us {
+  font-family: "Raleway", sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 32px;
+  border-radius: 2px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  margin: 10px;
+  color: #fff;
+}
+
+#intro .intro-content .btn-register {
+  background: #5335eb;
+  border: 2px solid #5335eb;
+}
+
+#intro .intro-content .btn-register:hover {
+  background: none;
+  color: #5335eb;
+}
+
+#intro .intro-content .btn-contact-us {
+  background: #ff6f61ff;
+  border: 2px solid #ff6f61ff;
+}
+
+#intro .intro-content .btn-contact-us:hover {
+  background: none;
+  color: #ff6f61ff;
 }
 /*# sourceMappingURL=main.css.map */

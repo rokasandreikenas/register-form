@@ -1,0 +1,34 @@
+#registrationTab {
+    padding-top: 20px;
+    justify-content: space-between;
+  
+    .nav-item {
+      .nav-link {
+        color: $button-color;
+        background-color: $background-color2;
+        border: none;
+        font-weight: 500;
+  
+        &:hover,
+        &.active {
+          color: $button-color;
+          border-bottom: 3px solid $button-color;
+        }
+      }
+    }
+  }
+  
+  #registrationTabContent {
+    padding-top: 20px;
+  }
+  
+  .terms-link {
+    color: $button-color;
+    text-decoration: underline;
+  
+    &:hover {
+      color: $button-color;
+      text-decoration: none;
+    }
+  }
+  

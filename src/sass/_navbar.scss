@@ -1,0 +1,16 @@
+.navbar {
+    padding: 0rem 1rem;
+    font-weight: 500;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: $font-color3;
+    border-bottom: 3px solid $background-color1;
+
+    &.current,
+    &:active,
+    &:hover {
+        color: $button-color;
+        border-bottom: 3px solid $button-color;
+    }
+}

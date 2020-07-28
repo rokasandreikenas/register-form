@@ -1,0 +1,104 @@
+.plus-minus {
+    margin-top: 5px;
+    width: 35px;
+    position: relative;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+}
+.plus,
+.minus {
+    width: 30px;
+    height: 30px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 32px;
+    text-align: center;
+    -webkit-transition: 0.5s all ease-out;
+    transition: 0.5s all ease-out;
+}
+
+.plus-minus-toggle {
+    position: relative;
+    width: 30px;
+    margin-top: 15px;
+
+    &:before,
+    &:after {
+        background: #000;
+        content: "";
+        height: 3px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 14px;
+        transition: transform 500ms ease;
+    }
+    &:after {
+        transform-origin: center;
+    }
+}
+
+.accordion {
+    display: none;
+
+    .card.active > .card-header {
+        background-color: $button-color;
+
+        .btn {
+            color: $font-color1;
+            text-decoration: none;
+        }
+
+        .plus-minus .plus {
+            opacity: 0;
+            -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+        }
+
+        .plus-minus .minus {
+            opacity: 1;
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+    }
+
+    .card {
+        background-color: $background-color1;
+        width: 94%;
+        justify-content: center;
+        margin: 0 auto;
+
+        .card-header {
+            padding: 0px;
+            border: none;
+
+            .mb-0 {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .btn {
+                color: $font-color3;
+                font-weight: 500;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    #registrationTab,
+    #registrationTabContent {
+        display: none;
+    }
+    .accordion {
+        display: block;
+    }
+}

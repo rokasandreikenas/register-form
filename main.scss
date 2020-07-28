@@ -1,71 +1,13 @@
 @import "node_modules/bootstrap/scss/bootstrap.scss";
-@import "./src/css/colors";
+@import "./src/sass/colors";
+@import "./src/sass/button";
+@import "./src/sass/navbar";
+@import "./src/sass/carousel";
+@import "./src/sass/tabs";
+@import "./src/sass/collapse";
+@import "./src/sass/checkbox";
 
-// Navbar
-
-.navbar {
-  padding: 0rem 1rem;
-  font-weight: 500;
-}
-
-.navbar-light .navbar-nav .nav-link {
-  color: $font-color3;
-  border-bottom: 3px solid $background-color1;
-
-  &.current,
-  &:active,
-  &:hover {
-    color: $button-color;
-    border-bottom: 3px solid $button-color;
-  }
-}
-
-// Carousel
-
-.carousel-inner {
-  width: 100%;
-  height: 500px;
-}
-
-.carousel-text {
-  position: absolute;
-  top: 140px;
-  left: 160px;
-  color: white;
-  max-width: 40%;
-  font-weight: 500;
-
-  p {
-    padding-top: 20px;
-  }
-}
-
-@include media-breakpoint-down(md) {
-  .carousel-text {
-    position: absolute;
-    top: 40px;
-    left: 60px;
-    color: white;
-    max-width: 40%;
-    font-weight: 500;
-
-    h1 {
-      font-size: 24px;
-    }
-
-    p {
-      padding-top: 10px;
-      font-size: 10px;
-    }
-  }
-
-  .carousel-inner {
-    width: 100%;
-    height: 270px;
-  }
-}
-
-// Register
+// Registration form
 
 .register-section {
   background-color: $background-color2;
@@ -106,184 +48,115 @@
     width: 18px;
   }
 }
-
-// Registration tab
-
-#registrationTab {
-  padding-top: 20px;
-  justify-content: space-between;
-
-  .nav-item {
-    .nav-link {
-      color: $button-color;
-      background-color: $background-color2;
-      border: none;
-      font-weight: 500;
-
-      &:hover,
-      &.active {
-        color: $button-color;
-        border-bottom: 3px solid $button-color;
-      }
-    }
-  }
-}
-
-#registrationTabContent {
-  padding-top: 20px;
-}
-
-.terms-link {
-  color: $button-color;
-  text-decoration: underline;
-
-  &:hover {
-    color: $button-color;
-    text-decoration: none;
-  }
-}
-
-// Collapse
-
-.plus-minus-toggle {
-  cursor: pointer;
-  position: relative;
-  width: 30px;
-  margin-top: 15px;
-
-  &:before,
-  &:after {
-    background: #000;
-    content: "";
-    height: 3px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 14px;
-    transition: transform 500ms ease;
-  }
-  &:after {
-    transform-origin: center;
-  }
-}
-
-.accordion {
-  display: none;
-
-  .card.active > .card-header {
-    background-color: $button-color;
-
-    .btn {
-      color: $font-color1;
-      text-decoration: none;
-    }
-  }
-
-  .card {
-    background-color: $background-color1;
-    width: 94%;
-    justify-content: center;
-    margin: 0 auto;
-
-    .card-header {
-      padding: 0px;
-      border: none;
-
-      .mb-0 {
-        display: flex;
-        justify-content: space-between;
-      }
-
-      .btn {
-        color: $font-color3;
-        font-weight: 500;
-        text-decoration: none;
-
-        &:hover {
-          text-decoration: none;
-        }
-      }
-    }
-  }
-}
-
-@include media-breakpoint-down(sm) {
-  #registrationTab,
-  #registrationTabContent {
-    display: none;
-  }
-  .accordion {
-    display: block;
-  }
-}
-
-// Custom checkbox
-.custom-control {
-  margin-top: 40px;
-}
-.custom-checkbox {
-  .custom-control-label {
-    padding-left: 10px;
-    font-size: 14px;
-  }
-
-  .custom-control-label::before {
-    margin-top: 12px;
-  }
-
-  .custom-control-label::after {
-    background-color: $background-color1;
-    border: 0.5px solid $font-color2;
-    border-radius: 3px;
-    margin-top: 12px;
-  }
-}
-
-.custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {
-  background-image: url("data:image/svg+xml,%3Csvg width='1em' height='1em' viewBox='0 0 16 16' class='bi bi-check' fill='%235335eb' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' d='M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z'/%3E%3C/svg%3E");
-  background-size: 16px 16px;
-}
-
-.custom-checkbox
-  .custom-control-input:checked:focus
-  ~ .custom-control-label::before,
-.custom-checkbox .custom-control-input:focus ~ .custom-control-label::before {
-  box-shadow: 0 0 0 1px $background-color2, 0 0 0 0.2rem $background-color2;
-}
-
-.custom-checkbox .custom-control-input:active ~ .custom-control-label::before {
-  background-color: $background-color2;
-}
-
-// Button
-
-.register-button {
-  background-color: $button-color;
-  border: none;
-  color: white;
-  padding: 10px 54px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 36px 0px;
-  font-weight: 500;
-  border-radius: 50px;
-  cursor: pointer;
-
-  &:hover {
-    background-color: $button-color-hover;
-  }
-
-  &:focus {
-    outline: none;
-  }
-}
-
 // Google maps
 
 #map {
   width: 100%;
   height: 400px;
   background-color: grey;
+}
+
+// Intro
+#intro {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+
+  &::after {
+    content: "";
+    background: url("./src/img/1.jpg") no-repeat;
+    opacity: 0.75;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }
+
+  .intro-content {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    text-align: center;
+
+    h2 {
+      color: $button-color;
+      margin-bottom: 30px;
+      font-size: 64px;
+      font-weight: 700;
+
+      span {
+        color: #ff6f61ff;
+        text-decoration: underline;
+      }
+    }
+
+    .btn-register,
+    .btn-contact-us {
+      font-family: "Raleway", sans-serif;
+      font-size: 15px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      display: inline-block;
+      padding: 10px 32px;
+      border-radius: 2px;
+      transition: 0.5s;
+      margin: 10px;
+      color: #fff;
+    }
+
+    .btn-register,
+    .btn-contact-us {
+      font-family: "Raleway", sans-serif;
+      font-size: 15px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      display: inline-block;
+      padding: 10px 32px;
+      border-radius: 2px;
+      transition: 0.5s;
+      margin: 10px;
+      color: #fff;
+    }
+    .btn-register {
+      background: $button-color;
+      border: 2px solid $button-color;
+
+      &:hover {
+        background: none;
+        color: $button-color;
+      }
+    }
+
+    .btn-contact-us {
+      background: #ff6f61ff;
+      border: 2px solid #ff6f61ff;
+
+      &:hover {
+        background: none;
+        color: #ff6f61ff;
+      }
+    }
+  }
 }
